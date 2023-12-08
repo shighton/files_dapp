@@ -16,9 +16,9 @@ module.exports = {
     sepolia: {
       provider: () => new HDWalletProvider({
       mnemonic: {
-      phrase: "divide bulb around abstract lab wrap purchase praise divide apple brother hole" //process.env.mnemonic
+      phrase: process.env.mnemonic
       },
-      providerOrUrl: "https://sepolia.infura.io/v3/78c9fc8809974c878d8026a6103c7408" //process.env.infura_url
+      providerOrUrl: process.env.infura_url
       }),
       network_id: 11155111, // Sepolia's network ID
       gas: 4000000, // Adjust the gas limit as per your requirements
