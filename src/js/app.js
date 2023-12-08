@@ -93,7 +93,6 @@ App = {
           const fileContents = await viewFile();
           alert("Contents for File " + fileId + ":\n" + fileContents);
           console.log("File " + fileId + " was viewed");
-          location.reload();
         } catch (error) {
           console.error("Error alerting file contents:", error);
         }
@@ -118,6 +117,7 @@ App = {
         try {
           await addFile();
           console.log("File Added");
+          location.reload();
         } catch (error) {
           console.error("Error alerting file addition", error);
         }
@@ -139,6 +139,7 @@ App = {
         try {
           await borrowFile();
           console.log("File Borrowed");
+          location.reload();
         } catch (error) {
           console.error("Error alerting file borrowing", error);
         }
@@ -160,6 +161,7 @@ App = {
         try {
           await takeFile();
           console.log("File Taken");
+          location.reload();
         } catch (error) {
           console.error("Error alerting file taking", error);
         }
@@ -183,6 +185,7 @@ App = {
         try {
           await lendFile();
           console.log("File Lent");
+          location.reload();
         } catch (error) {
           console.error("Error alerting file lending", error);
         }
@@ -206,6 +209,7 @@ App = {
         try {
           await giveFile();
           console.log("File Given");
+          location.reload();
         } catch (error) {
           console.error("Error alerting file giving", error);
         }
@@ -227,6 +231,7 @@ App = {
         try {
           await deleteFile();
           console.log("File Deleted");
+          location.reload();
         } catch (error) {
           console.error("Error alerting file deletion", error);
         }
