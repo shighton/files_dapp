@@ -2,9 +2,7 @@ var Files = artifacts.require("./Files.sol");
 const truffleAssert = require('truffle-assertions');
 
 contract("Files", function() {
-  
   describe("Setting up the contract", function () {
-
     var filesInstance;
 
     beforeEach(async function () {
@@ -33,11 +31,9 @@ contract("Files", function() {
       assert.equal(files[1], "", "has no name");
       assert.equal(files[2], "", "has no contents");
     })
-
   })
 
   describe("Viewing file contents", function () {
-
     var filesInstance;
 
     beforeEach(async function () {
@@ -53,11 +49,9 @@ contract("Files", function() {
       let contents = await filesInstance.viewFile.call(2);
       assert.equal(contents, "Lorem ipsum.", "File 2: correct contents are displayed");
     })
-
   })
 
   describe("Adding files", function () {
-
     var filesInstance;
 
     beforeEach(async function () {
@@ -69,11 +63,9 @@ contract("Files", function() {
       let contents = await filesInstance.viewFile.call(3);
       assert.equal(contents, "Bruh", "File 3: correct contents are displayed");
     })
-
   })
 
   describe("Borrowing files", function () {
-
     var filesInstance;
 
     beforeEach(async function () {
@@ -86,11 +78,9 @@ contract("Files", function() {
       let owner = file2.owner
       assert.equal(owner, filesInstance.owner, "File 2: Successfully borrowed");
     })
-
   })
 
   describe("Taking files", function () {
-
     var filesInstance;
 
     beforeEach(async function () {
@@ -103,11 +93,9 @@ contract("Files", function() {
       let owner = file2.owner
       assert.equal(owner, filesInstance.owner, "File 2: Successfully taken");
     })
-
   })
 
   describe("Lending files", function () {
-
     var filesInstance;
 
     beforeEach(async function () {
@@ -120,11 +108,9 @@ contract("Files", function() {
       let owner = file2.owner
       assert.equal(owner, filesInstance.owner, "File 2: Successfully lent");
     })
-
   })
 
   describe("Giving files", function () {
-
     var filesInstance;
 
     beforeEach(async function () {
@@ -137,11 +123,9 @@ contract("Files", function() {
       let owner = file2.owner
       assert.equal(owner, filesInstance.owner, "File 2: Successfully given");
     })
-
   })
 
   describe("Deleting files", function () {
-
     var filesInstance;
 
     beforeEach(async function () {
@@ -153,10 +137,11 @@ contract("Files", function() {
       let contents = await filesInstance.viewFile.call(3);
       assert.equal(contents, "Bruh", "File 3: Successfully added");
       await filesInstance.deleteFile(3, 5);
-      contents = await filesInstance.viewFile.call(3);
-      assert.equal(contents, "", "File 3: Successfully deleted");
+      await truffleAssert.fails(
+        filesInstance.viewFile.call(3),
+        truffleAssert.ErrorType.REVERT,
+        "VM Exception while processing transaction: revert"
+      );
     })
-
   })
-
 });
