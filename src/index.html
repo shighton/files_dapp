@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>File Locker</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <h1 class="text-center">File Locker - Sabastian Highton</h1>
+          <hr/>
+          <br/>
+
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+
+          <div id="content">
+            
+            <div class="top-content">
+              <p id="accountAddress" class="text-center"></p>
+  
+              <div class="center-button">
+                <button id="enableButton" class="enableButton">Enable Metamask</button>
+              </div>
+            </div>
+
+            <br/><hr/>
+
+            <div class="functions">
+              <h2>View File</h2>
+  
+              <form id="viewForm">
+                <label for="view-fileId">File ID:</label>
+                <input type="text" id="view-fileId" name="view-fileId" required>
+                <input type="submit" value="Submit">
+              </form>
+  
+              <h2>Add File</h2>
+  
+              <form id="addForm">
+                <label for="fileName">Name:</label>
+                <input type="text" id="fileName" name="fileName" required>
+                <label for="fileContents">Contents:</label>
+                <input type="text" id="fileContents" name="fileContents" required>
+                <input type="submit" value="Submit">
+              </form>
+  
+              <h2>Borrow File</h2>
+  
+              <form id="borrowForm">
+                <label for="borrow-fileId">File ID:</label>
+                <input type="text" id="borrow-fileId" name="borrow-fileId" required>
+                <label for="borrowKey">Borrow Key:</label>
+                <input type="text" id="borrowKey" name="borrowKey" required>
+                <input type="submit" value="Submit">
+              </form>
+  
+              <h2>Take File</h2>
+  
+              <form id="takeForm">
+                <label for="take-fileId">File ID:</label>
+                <input type="text" id="take-fileId" name="take-fileId" required>
+                <label for="takeKey">Take Key:</label>
+                <input type="text" id="takeKey" name="takeKey" required>
+                <input type="submit" value="Submit">
+              </form>
+  
+              <h2>Lend File</h2>
+  
+              <form id="lendForm">
+                <label for="lend-fileId">File ID:</label>
+                <input type="text" id="lend-fileId" name="lend-fileId" required>
+                <label for="lendKey">Lend Key:</label>
+                <input type="text" id="lendKey" name="lendKey" required>
+                <label for="lend-recipient">Recipient:</label>
+                <input type="text" id="lend-recipient" name="lend-recipient" required>
+                <input type="submit" value="Submit">
+              </form>
+  
+              <h2>Give File</h2>
+  
+              <form id="giveForm">
+                <label for="give-fileId">File ID:</label>
+                <input type="text" id="give-fileId" name="give-fileId" required>
+                <label for="giveKey">Give Key:</label>
+                <input type="text" id="giveKey" name="giveKey" required>
+                <label for="give-recipient">Recipient:</label>
+                <input type="text" id="give-recipient" name="give-recipient" required>
+                <input type="submit" value="Submit">
+              </form>
+  
+              <h2>Delete File</h2>
+  
+              <form id="delForm">
+                <label for="del-fileId">File ID:</label>
+                <input type="text" id="del-fileId" name="del-fileId" required>
+                <label for="delKey">Delete Key:</label>
+                <input type="text" id="delKey" name="delKey" required>
+                <input type="submit" value="Submit">
+              </form>
+            </div>
+
+            <br/><hr/>
+            
+            <div class="file-info-header">
+              <h2>File Owners</h2>
+            </div>
+
+            <div class="file-info">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">File ID</th>
+                    <th scope="col">Temp Owner</th>
+                    <th scope="col">True Owner</th>
+                  </tr>
+                </thead>
+                <tbody id="filesInfo">
+                </tbody>
+              </table>
+            </div>
+
+            <hr/>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
