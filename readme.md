@@ -1,3 +1,7 @@
-# This is a File locking system using blockchain technology.
+## File Locker
 
-Developed by Sabastian Highton
+<p><em>File locking system using blockchain technology.</em></p>
+
+<p>View <a href='https://thehighton.com/filelocker'>File Locker</a> on the website.</p>
+
+
